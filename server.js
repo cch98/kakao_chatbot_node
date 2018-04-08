@@ -3,7 +3,7 @@ let app = express();
 
 let bp = require('body-parser');
 
-app.use(bp.json);
+app.use(bp.json());
 app.use(bp.urlencoded({extended:true}));
 
 app.get('/keyboard',function(req, res){
@@ -14,7 +14,7 @@ app.get('/keyboard',function(req, res){
 
     res.set({
         'content-type': 'application/json'
-    }).send(JSON.stringify(menu));
+    }).send(JSON.stringify(keyboard));
 
 });
 
